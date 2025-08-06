@@ -2,15 +2,6 @@
 
 :root {
     --color-black: #000;
-    --color-white: #fff;
-}
-
-.main-nav {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 2.5rem;
 }
 
 * {
@@ -24,6 +15,8 @@ body {
     background: #fff;
     color: #111;
     line-height: 1.7;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
 }
 
 
@@ -34,11 +27,28 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     background: #111;
     color: #fff;
     background-image: none;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+/* Lock header/navbar at top */
+
+.top {
+    width: 100%;
+    z-index: 100;
+    background: #000;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    padding-top: 112px;
 }
 
 .logo {
@@ -50,6 +60,63 @@ body {
     color: #ffffff;
     letter-spacing: 2px;
     margin-bottom: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logo:hover {
+    letter-spacing: 4px;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    top: 24px;
+}
+
+.header-left {
+    left: 32px;
+}
+
+.header-right {
+    right: 32px;
+}
+
+.menu-btn,
+.search-btn,
+.profile-btn,
+.cart-btn {
+    background: transparent;
+    border: none;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-btn:hover,
+.search-btn:hover,
+.profile-btn:hover,
+.cart-btn:hover {
+    background: #222;
+}
+
+.menu-btn img,
+.search-btn img,
+.profile-btn img,
+.cart-btn img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
 }
 
 hr {
@@ -59,6 +126,14 @@ hr {
     border: none;
     margin: 0.5rem 0;
     position: relative;
+}
+
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2.5rem;
 }
 
 nav {
@@ -80,32 +155,19 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
-    transition: color 0.2s;
+    transition: 0.2s;
 }
 
-.login-button {
-    background: #fff;
-    color: #111;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px;
+nav a:hover {
+    letter-spacing: 2px;
 }
 
-.signup-button {
-    background: #ffffff;
-    color: #000000;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px;
+.header-buttons {
+    display: flex;
 }
+
+
+/* hero section */
 
 .hero-section {
     position: relative;
@@ -556,4 +618,46 @@ nav a {
     align-self: stretch;
 }
 
-.login-signup {}
+.login-signup {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: last baseline;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 75px;
+}
+
+.login-footer {
+    background: transparent;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 0px;
+    transition: 0.2s;
+}
+
+.signup-footer {
+    background: transparent;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+.signup-footer:hover,
+.login-footer:hover {
+    background: #fff;
+    color: #000;
+}
