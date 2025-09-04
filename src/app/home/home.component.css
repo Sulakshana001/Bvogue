@@ -1,3 +1,7 @@
+:root {
+    --color-black: #000;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,186 +17,108 @@ body {
     padding-left: 0 !important;
 }
 
-.top {
+
+/* hero section */
+
+.hero-section {
+    position: relative;
+    height: 80vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 1rem 0;
-    background: #111;
-    color: #fff;
-    background-image: none;
-    position: fixed;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
     top: 0;
     left: 0;
-}
-
-
-/* Lock header/navbar at top */
-
-.top {
     width: 100%;
-    z-index: 100;
-    background: #000;
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-body {
-    padding-top: 112px;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffffff;
-    letter-spacing: 2px;
-    margin-bottom: 0;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.logo:hover {
-    letter-spacing: 4px;
-}
-
-.header-left,
-.header-right {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    position: absolute;
-    top: 24px;
-}
-
-.header-left {
-    left: 32px;
-}
-
-.header-right {
-    right: 32px;
-}
-
-.menu-btn,
-.search-btn,
-.profile-btn,
-.cart-btn {
-    background: transparent;
-    border: none;
-    padding: 6px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-btn:hover,
-.search-btn:hover,
-.profile-btn:hover,
-.cart-btn:hover {
-    background: #222;
-}
-
-.menu-btn img,
-.search-btn img,
-.profile-btn img,
-.cart-btn img {
-    width: 28px;
-    height: 28px;
-    filter: brightness(0) invert(1);
-}
-
-hr {
-    width: 100%;
-    height: 1px;
-    background-color: #444;
-    border: none;
-    margin: 0.5rem 0;
-    position: relative;
-}
-
-.main-nav {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 2.5rem;
-}
-
-nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: center;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    letter-spacing: 2px;
-}
-
-
-/* Men-Banner Style */
-
-.men-banner {
-    display: flex;
-    position: relative;
-    height: 40vh;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
-}
-
-.banner-image {
-    position: absolute;
+    height: 100%;
     object-fit: cover;
-    justify-content: center;
+    opacity: 0.95;
+    z-index: 0;
 }
 
-.men-text {
+.hero-content {
+    z-index: 1;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.men-text h2 {
-    font-size: 50px;
-    color: #ffffff;
-    align-items: center;
-    justify-content: center;
-    margin-top: 160px;
+.hero-content h1 {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 700;
     letter-spacing: .3px;
+    margin-top: 200px;
     margin-bottom: -10px;
 }
 
+.button-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 50px;
+}
 
-/* Accessories Cards Style */
+.explore-men,
+.explore-women {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin: 20px auto 0 auto;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 6px;
+    transition: font-size 0.2s;
+}
 
-.men-product {
+.explore-men::after,
+.explore-women::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transform: scaleX(0.7);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.explore-men:hover,
+.explore-women:hover {
+    font-size: 28px;
+}
+
+.explore-men:hover::after,
+.explore-women:hover::after {
+    transform: scaleX(1.5);
+    background: #ffffff;
+}
+
+.explore-women {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin: 20px auto 0 auto;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+}
+
+
+/* New Drop Section */
+
+.NewDrop-section {
     position: relative;
     display: flex;
     justify-content: center;
@@ -202,16 +128,28 @@ nav a:hover {
     border: 0px solid black;
 }
 
+.Newdrop {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-black);
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+
+/* Product Card Styles */
+
 .product-card {
     background: #000000;
     border-radius: 6px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
     padding: 0px;
-    width: 370px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: left;
-    margin: 30px 30px;
+    margin: 20px auto;
     transition: box-shadow 0.2s;
     cursor: pointer;
     transition: 0.2s;
@@ -223,8 +161,8 @@ nav a:hover {
 }
 
 .product-card img {
-    width: 370px;
-    height: 480px;
+    width: 300px;
+    height: 380px;
     object-fit: cover;
     border-radius: 0px;
     margin-bottom: 16px;
@@ -258,7 +196,7 @@ nav a:hover {
 
 .accessories-pic {
     position: relative;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -286,13 +224,13 @@ nav a:hover {
 }
 
 .accessories-content h2 {
-    font-size: 90px;
+    font-size: 50px;
     color: #ffffff;
     align-items: center;
     justify-content: center;
-    margin-top: 160px;
+    margin-top: 200px;
     letter-spacing: .3px;
-    margin-bottom: -60px;
+    margin-bottom: -10px;
 }
 
 .ac-button {
@@ -311,12 +249,12 @@ nav a:hover {
     font-size: 30px;
     font-weight: 500;
     margin: 20px;
-    border: 2px solid #fff;
+    border: none;
     color: #ffffff;
     cursor: pointer;
     top: 80px;
     background: transparent;
-    border-radius: 30px;
+    border-radius: 6px;
     padding: 0.7rem 2rem;
     cursor: pointer;
     transition: 0.2s;
@@ -325,8 +263,65 @@ nav a:hover {
 .explore-accessories:hover {
     font-size: 33px;
     font-weight: 550;
-    background: #000;
-    border: 0.5px solid #595959;
+}
+
+
+/*  Accessories Cards   */
+
+.ACdrop {
+    font-size: 20px;
+    color: var(--color-black);
+    text-align: left;
+    margin-left: 30px;
+}
+
+.accessories-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    overflow: hidden;
+    border: 0px solid black;
+}
+
+
+/*  Selection Section*/
+
+.selections {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+}
+
+.selections-content {
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition: box-shadow 0.2s;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+    justify-content: end;
+    padding: 20px;
+}
+
+.selections-content:hover {
+    box-shadow: 0 4px 24px rgba(218, 218, 218, 0.15);
+    transform: scale(1.02);
+}
+
+.selections-text {
+    position: absolute;
+    color: #fff;
+    font-size: 27px;
+    align-items: center;
+    padding-left: 135px;
+    margin-bottom: 20px;
 }
 
 

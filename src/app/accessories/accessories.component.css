@@ -517,3 +517,42 @@ nav a:hover {
     background: #fff;
     color: #000;
 }
+
+
+/*  Selection Section*/
+
+.selections {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+}
+
+.selections-content {
+    display: flex;
+    flex-direction: column;
+    width: 570px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition: box-shadow 0.2s;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+    justify-content: end;
+    padding: 50px;
+}
+
+.selections-content:hover {
+    box-shadow: 0 4px 24px rgba(218, 218, 218, 0.15);
+    transform: scale(1.02);
+}
+
+.selections-text {
+    position: absolute;
+    color: #fff;
+    font-size: 27px;
+    align-items: center;
+    padding-left: 185px;
+    margin-bottom: 20px;
+}
